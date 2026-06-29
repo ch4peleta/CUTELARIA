@@ -1,0 +1,12 @@
+/* Ajuste de tamanho do texto da copy de bônus */
+.bonus-intro-title {
+    font-size: 1.5rem !important;
+    /* Reduzido de 2.2rem */
+    line-height: 1.3 !important;
+}
+
+@media (max-width: 768px) {
+    .bonus-intro-title {
+        font-size: 1.2rem !important;
+    }
+}

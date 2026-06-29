@@ -1,0 +1,19 @@
+/* Bonus Intro Section */
+.bonus-intro-section {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #111;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bonus-intro-text {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #fff, #C0C0C0, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

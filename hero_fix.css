@@ -1,0 +1,8 @@
+/* Correção Hero Animation - Aplicar na moldura ao invés da imagem */
+.hero .molde-frame {
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero .hero-mockup {
+    animation: none;
+}

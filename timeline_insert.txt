@@ -1,0 +1,61 @@
+
+            <!-- LINHA DO TEMPO DA CUTELARIA -->
+            <div class="timeline-section">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">Linha do Tempo da Cutelaria</h3>
+                    <p class="timeline-subtitle">Uma jornada através da história das lâminas</p>
+                </div>
+                
+                <div class="timeline-container">
+                    <!-- Era 1 -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-year">500 a.C</div>
+                        <div class="timeline-content">
+                            <i data-lucide="triangle" class="timeline-icon"></i>
+                            <h4>As Primeiras Lâminas</h4>
+                            <p>Desenhos rústicos, pedra lascada, início da metalurgia.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Era 2 -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-year">Idade Média</div>
+                        <div class="timeline-content">
+                            <i data-lucide="sword" class="timeline-icon"></i>
+                            <h4>Espadas Europeias</h4>
+                            <p>Forja tradicional, lâminas longas, ornamentação clássica.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Era 3 -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-year">1800</div>
+                        <div class="timeline-content">
+                            <i data-lucide="wrench" class="timeline-icon"></i>
+                            <h4>Facas de Trabalho</h4>
+                            <p>Ferramentas robustas, cutelaria funcional do período industrial.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Era 4 -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-year">Hoje</div>
+                        <div class="timeline-content">
+                            <i data-lucide="scissors" class="timeline-icon timeline-icon-modern"></i>
+                            <h4>Cutelaria Moderna</h4>
+                            <p>Design técnico, curvas otimizadas, precisão milimétrica.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-conclusion reveal">
+                    <p class="conclusion-text">Agora você tem acesso aos 300 moldes inspirados em toda essa evolução.</p>
+                </div>
+            </div>
+
+    <!-- Copy antes dos Bonus -->
+    <section class="bonus-intro-section">
+        <div class="container">
+            <p class="bonus-intro-text">E adquirindo hoje, os seguintes bônus serão entregues:</p>
+        </div>
+    </section>

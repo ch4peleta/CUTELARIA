@@ -1,0 +1,11 @@
+/* SCANNER FIX - Imagens Totalmente Visíveis */
+.scanner-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+.scanner-container {
+    background-color: #e5e5e5 !important;
+}

@@ -1,0 +1,13 @@
+.rating {
+    display: flex;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.star-filled {
+    color: #FFD700;
+    width: 20px;
+    height: 20px;
+    fill: #FFD700;
+    filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.8));
+}

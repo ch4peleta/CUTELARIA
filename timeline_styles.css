@@ -1,0 +1,262 @@
+/* --- TIMELINE DA CUTELARIA (Cinematic) --- */
+.timeline-section {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, #111 0%, #1a1a1a 50%, #111 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fundo Mapa Mundi */
+.timeline-map-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 500' opacity='0.1'%3E%3Cpath fill='%23ffffff' d='M220,250c0,0,10-20,30-20s30,20,30,20s-10,20-30,20S220,250,220,250z M400,150c0,0,20-30,50-30s50,30,50,30s-20,30-50,30S400,150,400,150z M700,200c0,0,30-40,60-40s60,40,60,40s-30,40-60,40S700,200,700,200z M150,350c0,0,15-25,35-25s35,25,35,25s-15,25-35,25S150,350,150,350z'/%3E%3Ccircle cx='200' cy='100' r='2' fill='%23ffffff'/%3E%3Ccircle cx='500' cy='300' r='2' fill='%23ffffff'/%3E%3Ccircle cx='800' cy='150' r='2' fill='%23ffffff'/%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Fundo aço escovado (simulado com ruído/gradiente) */
+.timeline-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.timeline-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-header h3 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #fff, #C0C0C0, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(192, 192, 192, 0.3);
+}
+
+.timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 30px;
+    z-index: 2;
+}
+
+/* Linha vertical luminosa */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, var(--primary), transparent);
+    box-shadow: 0 0 10px var(--primary);
+    opacity: 0.5;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+    padding-left: 40px;
+}
+
+/* Ícones de Facas/Espadas */
+.timeline-icon-wrapper {
+    position: absolute;
+    left: -20px;
+    /* Ajuste para centralizar na linha */
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: #1a1a1a;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px var(--primary), inset 0 0 10px rgba(0, 0, 0, 0.8);
+    z-index: 5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-icon {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+}
+
+.timeline-item:hover .timeline-icon-wrapper {
+    transform: scale(1.2) rotate(360deg);
+    box-shadow: 0 0 25px var(--primary), 0 0 50px var(--primary);
+    background: var(--primary);
+}
+
+.timeline-item:hover .timeline-icon {
+    color: #000;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    position: relative;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateX(10px);
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+.timeline-year {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+
+.timeline-content h4 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.timeline-content p {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Conclusão Épica */
+.timeline-conclusion {
+    text-align: center;
+    margin-top: 80px;
+    padding: 40px;
+    position: relative;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    z-index: 2;
+}
+
+.timeline-conclusion h3 {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.timeline-conclusion h3 strong {
+    color: var(--primary);
+    font-weight: 800;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+/* Responsivo */
+@media (min-width: 768px) {
+    .timeline-container {
+        padding-left: 0;
+    }
+
+    .timeline-container::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-item {
+        width: 50%;
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+
+    .timeline-item:nth-child(odd) {
+        margin-left: 0;
+        margin-right: auto;
+        padding-right: 50px;
+        text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+        margin-left: auto;
+        margin-right: 0;
+        padding-left: 50px;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-icon-wrapper {
+        left: auto;
+        right: -20px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-icon-wrapper {
+        left: -20px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content {
+        transform-origin: right center;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+        transform-origin: left center;
+    }
+
+    .timeline-item:hover .timeline-content {
+        transform: scale(1.02);
+    }
+}
+
+/* Bonus Intro Section */
+.bonus-intro-section {
+    padding: 60px 0 40px;
+    text-align: center;
+    background-color: #111;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bonus-intro-title {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #fff, #FFD700, #fff);
+    /* Gold Gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+    margin: 0;
+    padding: 0 20px;
+    line-height: 1.4;
+}

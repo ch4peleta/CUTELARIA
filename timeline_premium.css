@@ -1,0 +1,417 @@
+/* ============================================
+   TIMELINE PREMIUM - VISUAL ÚNICO E IMPACTANTE
+   ============================================ */
+
+.timeline-section {
+    position: relative;
+    padding: 120px 0;
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    overflow: hidden;
+}
+
+/* Mapa da Europa - Elemento Central */
+.timeline-map-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 1200px;
+    height: 80%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.15' d='M400,100 L420,95 L440,100 L450,110 L455,125 L450,140 L440,150 L420,155 L400,150 L380,140 L375,125 L380,110 Z M300,200 L320,190 L350,195 L370,210 L375,230 L365,250 L340,260 L310,255 L295,240 L290,220 Z M500,180 L530,175 L560,185 L575,205 L570,230 L550,245 L520,240 L505,220 L500,200 Z M250,300 L280,290 L310,300 L325,320 L320,345 L300,360 L270,355 L255,335 Z M450,280 L480,275 L510,285 L525,305 L520,330 L500,345 L470,340 L455,320 Z'/%3E%3Cpath fill='%23ffffff' opacity='0.08' d='M350,150 L380,145 L400,155 L405,175 L395,190 L370,195 L350,185 L345,165 Z M480,220 L510,215 L530,225 L535,245 L525,260 L500,265 L480,255 L475,235 Z M320,350 L350,345 L370,355 L375,375 L365,390 L340,395 L320,385 L315,365 Z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+    filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.1));
+}
+
+/* Efeito de brilho metálico de fundo */
+.timeline-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(192, 192, 192, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Header da Timeline */
+.timeline-header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 50%, #ffffff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    animation: shimmer 3s linear infinite;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+.timeline-subtitle {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Container da Timeline */
+.timeline-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+/* Linha vertical central metálica */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            rgba(192, 192, 192, 0.3) 10%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(192, 192, 192, 0.3) 90%,
+            transparent 100%);
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Timeline Item */
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.timeline-item.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Alternância esquerda/direita */
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 0;
+    margin-right: 60px;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 60px;
+    margin-right: 0;
+    text-align: left;
+}
+
+/* Ano da Timeline */
+.timeline-year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    font-weight: 800;
+    color: #ffffff;
+    background: #0a0a0a;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    letter-spacing: 2px;
+    font-family: 'Courier New', monospace;
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Ícone Wrapper - Círculo Metálico */
+.timeline-icon-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 0 30px rgba(255, 255, 255, 0.3),
+        inset 0 0 20px rgba(0, 0, 0, 0.8),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2);
+    z-index: 10;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.timeline-icon {
+    width: 36px;
+    height: 36px;
+    color: #ffffff;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+    transition: all 0.4s ease;
+}
+
+/* Hover no ícone */
+.timeline-item:hover .timeline-icon-wrapper {
+    transform: translate(-50%, -50%) scale(1.15) rotate(360deg);
+    border-color: #ffffff;
+    box-shadow:
+        0 0 50px rgba(255, 255, 255, 0.6),
+        inset 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.timeline-item:hover .timeline-icon {
+    color: #ffffff;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+}
+
+/* Content Card */
+.timeline-content {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(20, 20, 20, 0.98) 100%);
+    padding: 35px 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    position: relative;
+    transition: all 0.4s ease;
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.7),
+        0 0 40px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.timeline-item:hover .timeline-content::before {
+    opacity: 1;
+}
+
+.timeline-content h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline-content p {
+    font-size: 1.05rem;
+    color: #b0b0b0;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* Conclusão da Timeline */
+.timeline-conclusion {
+    text-align: center;
+    margin-top: 100px;
+    padding: 50px 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.conclusion-text {
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, #ffffff 0%, #c0c0c0 50%, #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ============================================
+   BONUS INTRO - COPY PREMIUM
+   ============================================ */
+
+.bonus-intro-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #0a0a0a 0%, #151515 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.bonus-intro-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(192, 192, 192, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.bonus-intro-section .container {
+    position: relative;
+    padding: 40px 50px;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    background:
+        linear-gradient(#0a0a0a, #0a0a0a) padding-box,
+        linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(192, 192, 192, 0.5), rgba(255, 255, 255, 0.3)) border-box;
+    box-shadow:
+        0 0 40px rgba(255, 255, 255, 0.15),
+        inset 0 0 30px rgba(0, 0, 0, 0.5);
+    animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes borderGlow {
+    0% {
+        box-shadow:
+            0 0 30px rgba(255, 255, 255, 0.1),
+            inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    100% {
+        box-shadow:
+            0 0 60px rgba(255, 255, 255, 0.25),
+            0 0 100px rgba(192, 192, 192, 0.15),
+            inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.bonus-intro-title {
+    font-size: 2rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 3px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    margin: 0 !important;
+    background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 25%, #ffffff 50%, #c0c0c0 75%, #ffffff 100%) !important;
+    background-size: 200% auto !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    animation: shimmer 4s linear infinite !important;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3)) !important;
+}
+
+/* Responsivo Mobile */
+@media (max-width: 768px) {
+    .timeline-title {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .timeline-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .timeline-container::before {
+        left: 30px;
+    }
+
+    .timeline-item {
+        flex-direction: column !important;
+        margin-bottom: 60px;
+        padding-left: 80px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin: 0 !important;
+        text-align: left !important;
+    }
+
+    .timeline-year {
+        left: 30px;
+        transform: translateX(-50%);
+        font-size: 0.85rem;
+        padding: 6px 15px;
+    }
+
+    .timeline-icon-wrapper {
+        left: 30px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .timeline-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .timeline-content h4 {
+        font-size: 1.3rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.95rem;
+    }
+
+    .conclusion-text {
+        font-size: 1.1rem;
+    }
+
+    .bonus-intro-title {
+        font-size: 1.3rem !important;
+        letter-spacing: 1.5px !important;
+    }
+
+    .bonus-intro-section .container {
+        padding: 30px 25px;
+    }
+}

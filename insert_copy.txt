@@ -1,0 +1,7 @@
+
+            <!-- Copy antes dos Bônus -->
+            <section class="bonus-intro-section">
+                <div class="container">
+                    <p class="bonus-intro-text">E adquirindo hoje, os seguintes bônus serão entregues:</p>
+                </div>
+            </section>
